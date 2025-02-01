@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine, Medhini?</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #ffebee;
+      color: #c62828;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #c62828;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #b71c1c;
+    }
+    .heart {
+      color: #c62828;
+      font-size: 4rem;
+      animation: beat 1s infinite;
+    }
+    .hidden {
+      display: none;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    #noButton {
+      position: absolute;
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💌 Will You Be My Valentine, Medhini? 💌</h1>
+    <p>Medhini, you make every day special. For Valentines Day Will you be mine?</p>
+    <div class="heart">❤️</div>
+    <button onclick="celebrate()">Yes!</button>
+    <button id="noButton" onmouseover="moveButton()">No</button>
+    <div id="surprise" class="hidden">
+      <p>Yay! I love you! You had no other choice!!!!!! ❤️</p>
+    </div>
+  </div>
+
+  <script>
+    function celebrate() {
+      document.getElementById('surprise').style.display = 'block';
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function moveButton() {
+      const noButton = document.getElementById('noButton');
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</body>
+</html>
