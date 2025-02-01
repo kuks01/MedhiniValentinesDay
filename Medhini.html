@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff4d4d, #ffcc00, #ff66ff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: black;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: black;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #ccc;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine, Medhini? ❤️</h1>
+        <div class="buttons">
+            <button class="yes" onclick="celebrate()">Yes</button>
+            <button class="no">No</button>
+        </div>
+    </div>
+    <script>
+        function celebrate() {
+            document.body.innerHTML = `<div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; background: linear-gradient(135deg, #ff66ff, #ffcc00, #ff4d4d); color: black; text-align: center;">
+                <h1>GOOD YOU HAD NO OTHER CHOICE.... I LOVE YOU ❤️🎉</h1>
+            </div>`;
+        }
+    </script>
+</body>
+</html>
